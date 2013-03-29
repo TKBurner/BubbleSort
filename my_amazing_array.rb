@@ -3,28 +3,30 @@ class Array
   # elements are in order
   #
   def bubble_sort
-    anymoved = "yes"
+    anymoved = true
 
     puts "Starting Array"
     puts self.join " "
 
     j=0
 
-    while anymoved=="yes" do
+    while anymoved==true do
 
-      anymoved = "no"
+      anymoved = false
       i=0
 
       while i<(self.length-1)
         tmp = self[i] 
 
         if tmp > self[i+1]
+          
           self[i]=self[i+1]
           self[i+1]=tmp
-          anymoved = "yes"
-          puts "Sorted -- still working"
+          anymoved = true
+          
           puts self.join " "
           j+=1    
+          puts "Sorted -- still working -- iteration ##{j}"
         end
 
         i +=1
@@ -33,7 +35,7 @@ class Array
 
     puts "Sorted - DONE!"
     puts self.join " "
-    puts "It took #{j} itterations to sort this array of #{i+1} elements"
+    puts "It took #{j} iterations to sort this array of #{i+1} elements"
 
     # TODO: Replace this with your own bubble sort alorithm.
     # HINT: The array that you are sorting is not to_sort anymore,
